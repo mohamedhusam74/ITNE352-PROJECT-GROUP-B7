@@ -69,3 +69,12 @@ if requested_type == "headlines":
 elif requested_type == "sources":
         sources = p_sources(news_info)
         response_data = {'type': 'sources', 'data': sources[:15]}
+
+
+def result_handler(socket, name):
+    while True:
+        requested_data = socket.recv(1024).decode()  
+        if requested_data.lower() == "exit":  # Check if client wants to terminate
+            print(f"Client {name}  terminated from the session.")
+            socket.close()
+            break
