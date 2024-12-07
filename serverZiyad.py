@@ -9,6 +9,7 @@ PORT = 34142
 API_KEY = "ea46e59a1e754401b72c3cb895e374e7"  
 GROUP_ID = "B7"  
 
+#Processing headlines
 def p_headlines(news_info):
     """
     Parse and extract headlines from the NewsAPI response.
