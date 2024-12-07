@@ -29,6 +29,7 @@ def p_headlines(news_info):
         })
     return articles
 
+#Processing sources
 def p_sources(news_info):
     sources = []
     for source in news_info.get('sources', []):
