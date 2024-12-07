@@ -30,4 +30,17 @@ def p_headlines(news_info):
         })
     return articles
 
+#Processing sources
+def p_sources(news_info):
+    sources = []
+    for source in news_info.get('sources', []):
+        sources.append({
+            'source_name': source.get('name'),
+            'country': source.get('country'),
+            'description': source.get('description'),
+            'url': source.get('url'),
+            'category': source.get('category'),
+            'language': source.get('language'),
+        })
+    return sources
 
