@@ -44,3 +44,15 @@ def p_sources(news_info):
         })
     return sources
 
+def p_request(socket, query, requested_type, name):
+    api = f'https://newsapi.org/v2/{query}&apiKey={API_KEY}'  # Construct API URL
+    result = requests.get(api)  
+
+
+    if result.status_code == 200:  
+        news_info = result.json()  
+    else:
+        print(f"Status Code: {result.status_code} has encountered error")
+        return
+
+
