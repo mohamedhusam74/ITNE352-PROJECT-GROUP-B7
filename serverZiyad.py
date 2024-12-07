@@ -86,3 +86,29 @@ def result_handler(socket, name):
 
         print(f"Received a request from {name} with the query '{query}' and type '{requested_type}'.")
         p_request(socket, query, requested_type, name)  
+
+
+def main():
+    try:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as serverSock:
+            serverSock.bind((HOST, PORT))
+            serverSock.listen(3)  
+            print(f"Server is up and running on port: {PORT}")
+
+
+            while True:
+                try:
+                    client_socket, client_addr = serverSock.accept()
+                    print(f"Connection established with {client_addr}")
+
+
+                    client_thread = threading.Thread(target=result_handler, args=(client_socket, client_addr))
+                    client_thread.start()
+                except Exception as e:
+                    print(f"Error accepting connection: {e}")
+    except Exception as e:
+        print(f"Server error: {e}")
+
+
+if __name__ == "__main__":
+    main()
