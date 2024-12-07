@@ -78,3 +78,11 @@ def result_handler(socket, name):
             print(f"Client {name}  terminated from the session.")
             socket.close()
             break
+
+        request = json.loads(requested_data)
+        query = request.get('query')
+        requested_type = request.get('type')
+
+
+        print(f"Received a request from {name} with the query '{query}' and type '{requested_type}'.")
+        p_request(socket, query, requested_type, name)  
