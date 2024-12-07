@@ -55,4 +55,17 @@ def p_request(socket, query, requested_type, name):
         print(f"Status Code: {result.status_code} has encountered error")
         return
 
+file_name = f"{name}_{requested_type}_{GROUP_ID}.json"
 
+with open(file_name, 'w') as json_file:
+        json.dump(news_info, json_file, indent=5)
+
+
+    # Process and send the response based on the requested type
+if requested_type == "headlines":
+        articles = p_headlines(news_info)
+        response_data = {'type': 'headlines', 'data': articles[:15]}  
+        socket.send(json.dumps(response_data).encode())
+elif requested_type == "sources":
+        sources = p_sources(news_info)
+        response_data = {'type': 'sources', 'data': sources[:15]}
