@@ -12,3 +12,17 @@ def extract_headlines(news_data):
         }
         for article in news_data.get('articles', [])
     ]
+
+def extract_sources(news_data):
+ 
+    return [
+        {
+            'source_name': source.get('name'),
+            'country': source.get('country'),
+            'description': source.get('description'),
+            'url': source.get('url'),
+            'category': source.get('category'),
+            'language': source.get('language'),
+        }
+        for source in news_data.get('sources', [])
+    ]
