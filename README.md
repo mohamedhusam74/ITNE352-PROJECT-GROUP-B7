@@ -15,7 +15,7 @@ With the help of the client application's simple design, users may browse menus,
 - **Group Name:** B7
 - **Course Code:** ITNE352
 - **Section:** 1
-- **Student Names:** Mohamed Husam Darwish , Ziyad Abdulnoor Yousi
+- **Student Names:** Mohamed Husam Darwish , Ziyad Abdulnoor Yousif
 - **Student IDs:** 202208375 ,  202200178 
 
 ---
