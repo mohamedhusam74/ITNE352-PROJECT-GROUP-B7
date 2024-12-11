@@ -68,5 +68,6 @@ SSL
 It was a very intresting course were we have acheived valuble knowledge about programming especally python. Special thank to Dr. Mohd Almeer who really deserves this "thank" for giving us some of his valuable knowledge and educating us in the network major.    
 
 # Conclution:
+To sum up, this project offers an interactive client-server real-time news aggregation system. It delivers the most recent headlines based on user selections, including keywords, categories, countries, and languages, using the NewsAPI.
 
 
