@@ -50,6 +50,7 @@ With the help of the client application's simple design, users may browse menus,
 
 1. **Client-Side Scripts:**
    ![first 25 lines](https://github.com/user-attachments/assets/25f16d38-bf50-4451-8702-f93d3f33ceb2)
+
    The client script is to send requests to the server about specific news with different country, category etc... First function is the "revealing_menu" which 
    uses the title and options to show the main menu with the title and its available options, it also has two parameters. While the seconf function 
   "sending_to_server" is used to send a formated request to the server, it has three parameters client, query and request_type. For the packages e used Socket and 
@@ -60,6 +61,7 @@ With the help of the client application's simple design, users may browse menus,
 3. **Server-Side Scripts:**
    
 ![image](https://github.com/user-attachments/assets/bf96074c-08aa-4d69-b17d-0260e623a95a)
+
 The server will be used to recieve requests from the client. For the server script, I made 3 files for the server code, configration and the expector. first function handler is used to Handles communication with a connected client and it contains 2 paremeters which are clientSoc, clientName, the clientSoc is the Socket object for client communication and clientName for the name of the connected client. Were we used the socket, json, requests, threading and extractors as the packages. 
 
 
