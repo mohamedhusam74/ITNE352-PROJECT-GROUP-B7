@@ -1,5 +1,5 @@
 # Configuration 
-API_KEY = "ea46e59a1e754401b72c3cb895e374e7"  
+API_KEY = "b5a80e90ac7d4670b5cd4a6ca1aae891"  
 HOST = '127.0.0.1'  
 PORT = 7000  
 GROUP_ID = "B7"  
