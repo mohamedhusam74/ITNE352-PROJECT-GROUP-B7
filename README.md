@@ -32,6 +32,9 @@ cient:
 server:
 
 # Additional concept
+-API
+-Multithreading 
+-SSL
 
 # Acklonegment
 
