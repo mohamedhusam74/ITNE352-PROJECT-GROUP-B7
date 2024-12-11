@@ -56,6 +56,7 @@ With the help of the client application's simple design, users may browse menus,
 3. **Server-Side Scripts:**
    
 ![image](https://github.com/user-attachments/assets/bf96074c-08aa-4d69-b17d-0260e623a95a)
+The server will be used to recieve requests from the client. For the server script, I made 3 files for the server code, configration and the expector. first function handler is used to Handles communication with a connected client and it contains 2 paremeters which are clientSoc, clientName, the clientSoc is the Socket object for client communication and clientName for the name of the connected client. Were we used the socket, json, requests, threading and extractors as the packages. 
 
 
 ---
