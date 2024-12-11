@@ -37,12 +37,13 @@ With the help of the client application's simple design, users may browse menus,
 3. **Development Environment Configuration:**
    
 ## How to Run the System
-
-1. **Setup Instructions:**
-   
-2. **Run the System:**
-   
-3. **Interaction:**
+1. Download the client file and the three files of the server
+2. Then to run open one terminal for the server and another one for the client
+3. To run the server type "python server_file.py" in the trerminal and it will start to listen to the client connection
+4. To run the client type "python client1.py" then:
+   - Enter your user name
+   - Making requests will be from the menu
+   - After finishing, click "quit" to terminate 
 ---
 
 ## Scripts
