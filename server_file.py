@@ -59,3 +59,23 @@ def handler(clientSoc,clientName):
             response_payload = {'error': 'wrong data type requested'}
 
         clientSoc.send(json.dumps(response_payload).encode()) 
+
+def start_server():
+    try:
+            ServerSock =  socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
+            ServerSock.bind((HOST, PORT))  
+            ServerSock.listen(3)  
+            print(f"Server started on host: {HOST}, port:{PORT}")
+
+            while True:
+                    clientSoc, client_address = ServerSock.accept()
+                    clientName = clientSoc.recv(1000).decode()
+                    print(f"Client connected: {clientName}")
+                    thread = threading.Thread(target=handler, args=(clientSoc,clientName)).start()
+        
+            
+    except Exception as e:
+        print(f"Server error: {e}")
+
+if __name__ == "__main__":
+    start_server() 
