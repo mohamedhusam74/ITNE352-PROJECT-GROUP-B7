@@ -68,7 +68,8 @@ The server will be used to recieve requests from the client. For the server scri
 ---
 
 ## Additional concept
-SSL
+For additional concept we used SSL
+
 
 ![image](https://github.com/user-attachments/assets/77ec45d2-57e8-440a-851e-de9d52eae4cc)
 
@@ -76,6 +77,9 @@ SSL
 
 ![image](https://github.com/user-attachments/assets/b1d633fd-f288-481e-82bd-b44efb9e141b)
 These photos are with encryption with ssl
+
+
+
 
 ------------------------------------------------------------------------------------------------
 
