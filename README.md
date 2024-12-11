@@ -48,16 +48,16 @@ With the help of the client application's simple design, users may browse menus,
 ## Scripts
 
 1. **Client-Side Scripts:**
+   
  
-2. **Server-Side Scripts:**
+3. **Server-Side Scripts:**
+   
 
 
 ---
 
 ## Additional concept
-- API
-- Multithreading 
-- SSL
+SSL
 
 ## Acklonegment
 It was a very intresting course were we have acheived valuble knowledge about programming especally python. Special thank to Dr. Mohd Almeer who really deserves this "thank" for giving us some of his valuable knowledge and educating us in the network major.    
