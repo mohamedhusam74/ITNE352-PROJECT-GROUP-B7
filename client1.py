@@ -207,3 +207,45 @@ def display_data(data):
     else:
         # Handle unexpected data formats
         print("Received an unexpected data format.")
+
+def main():
+    """Establishes the client-server connection and manages the main menu."""
+    # Create a socket for client-server communication
+    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = ("127.0.0.1", 7000)  # Match the server's address and port
+    client.connect(server_address)  # Connect to the server
+
+    # Prompt user to enter a client identifier
+    client_identifier = input("Enter your name: ").strip()
+    client.send(client_identifier.encode('utf-8'))  # Send identifier to the server
+
+    menu_options = {
+        "1": "Explore Headlines",
+        "2": "Discover Sources",
+        "3": "Exit"
+    }
+
+    while True:
+        # Display the main menu
+        display_menu("Main Menu", menu_options)
+        user_choice = input("Choose an action: ").strip()
+        if user_choice == "3":
+            # Exit the application
+            client.send("exit".encode('utf-8'))
+            print("Disconnecting...See you later!")
+            break
+        elif user_choice == "1":
+            # Navigate to the headlines menu
+            process_headlines(client)
+        elif user_choice == "2":
+            # Navigate to the sources menu
+            process_sources(client)
+        else:
+            # Notify user of invalid input
+            print("Invalid input. Choose a valid option.")
+
+    # Close the client connection
+    client.close()
+
+if __name__ == "__main__":
+    main()
