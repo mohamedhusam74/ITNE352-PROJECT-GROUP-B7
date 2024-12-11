@@ -82,3 +82,128 @@ def more_details(data):
         else:
             # Notify user about invalid input
             print("Invalid input. Please enter a valid number or 'no'.")
+
+def process_headlines(client):
+    """Manages the menu and actions for news headlines."""
+    menu_options = {
+        "1": "Search by Keywords",
+        "2": "Search by Category",
+        "3": "Search by Country",
+        "4": "List All Headlines",
+        "5": "Return to Main Menu"
+    }
+    countries = ["au", "ca", "jp", "ae", "sa", "kr", "us", "ma"]
+    categories = ["business", "general", "health", "science", "sports", "technology"]
+
+    while True:
+        # Display the headlines menu
+        display_menu("News Headlines", menu_options)
+        user_choice = input("Select an option: ").strip()
+        if user_choice == "5":
+            # Return to the main menu
+            break
+        elif user_choice == "1":
+            # Handle keyword search
+            keyword = input("Enter keyword(s): ").strip()
+            sending_to_server(client, f"top-headlines?q={keyword}", "headlines")
+        elif user_choice == "2":
+            # Handle category search
+            category = input(f"Enter category ({', '.join(categories)}): ").strip().lower()
+            if category not in categories:
+                print("Invalid category. Please try again.")
+                continue
+            sending_to_server(client, f"top-headlines?category={category}", "headlines")
+        elif user_choice == "3":
+            # Handle country search
+            country = input(f"Enter country code ({', '.join(countries)}): ").strip().lower()
+            if country not in countries:
+                print("Invalid country code. Please try again.")
+                continue
+            sending_to_server(client, f"top-headlines?country={country}", "headlines")
+        elif user_choice == "4":
+            # List all available headlines
+            sending_to_server(client, "top-headlines?q=\" \"", "headlines")
+        else:
+            # Notify user of invalid input
+            print("Invalid selection. Please try again.")
+            continue
+
+        # Retrieve and display server response
+        response = getting_server_response(client)
+        if response:
+            display_data(response)
+            more_details(response)
+
+def process_sources(client):
+    """Handles the menu and actions for news sources."""
+    menu_options = {
+        "1": "Search by Category",
+        "2": "Search by Country",
+        "3": "Search by Language",
+        "4": "List All Sources",
+        "5": "Return to Main Menu"
+    }
+    countries = ["au", "ca", "jp", "ae", "sa", "kr", "us", "ma"]
+    languages = ["ar", "en"]
+    categories = ["business", "general", "health", "science", "sports", "technology"]
+
+    while True:
+        # Display the sources menu
+        display_menu("News Sources", menu_options)
+        user_choice = input("Select an option: ").strip()
+        if user_choice == "5":
+            # Return to the main menu
+            break
+        elif user_choice == "1":
+            # Handle category search
+            category = input(f"Enter category ({', '.join(categories)}): ").strip().lower()
+            if category not in categories:
+                print("Invalid category. Please try again.")
+                continue
+            sending_to_server(client, f"top-headlines/sources?category={category}", "sources")
+        elif user_choice == "2":
+            # Handle country search
+            country = input(f"Enter country code ({', '.join(countries)}): ").strip().lower()
+            if country not in countries:
+                print("Invalid country code. Please try again.")
+                continue
+            sending_to_server(client, f"top-headlines/sources?country={country}", "sources")
+        elif user_choice == "3":
+            # Handle language search
+            language = input(f"Enter language code ({', '.join(languages)}): ").strip().lower()
+            if language not in languages:
+                print("Invalid language code. Please try again.")
+                continue
+            sending_to_server(client, f"top-headlines/sources?language={language}", "sources")
+        elif user_choice == "4":
+            # List all available sources
+            sending_to_server(client, "top-headlines/sources?", "sources")
+        else:
+            # Notify user of invalid input
+            print("Invalid selection. Please try again.")
+            continue
+
+        # Retrieve and display server response
+        response = getting_server_response(client)
+        if response:
+            display_data(response)
+            more_details(response)
+
+def display_data(data):
+    """Displays the data retrieved from the server."""
+    if data.get("type") == "headlines":
+        # Display a list of headlines
+        print("\n--- Headlines ---")
+        for idx, article in enumerate(data["data"], start=1):
+            print(f"{idx}. {article['source_name']} - {article['title']}")
+    elif data.get("type") == "sources":
+        # Display a list of news sources
+        print("\n--- Sources ---")
+        for idx, source in enumerate(data["data"], start=1):
+            print(f"{idx}. {source['source_name']} - {source['category']} ({source['language']}, {source['country']})")
+    elif data.get("error"):
+        # Display error messages if provided by the server
+        print(f"\nError: {data.get('error')}")
+    else:
+        # Handle unexpected data formats
+        print("Received an unexpected data format.")
