@@ -70,6 +70,29 @@ The server will be used to recieve requests from the client. For the server scri
 ## Additional concept
 SSL
 
+![image](https://github.com/user-attachments/assets/77ec45d2-57e8-440a-851e-de9d52eae4cc)
+
+![image](https://github.com/user-attachments/assets/96a2d6ff-e3fc-4e20-8f47-96d72744e5a1)
+
+![image](https://github.com/user-attachments/assets/b1d633fd-f288-481e-82bd-b44efb9e141b)
+These photos are with encryption with ssl
+
+------------------------------------------------------------------------------------------------
+
+![image](https://github.com/user-attachments/assets/ea23acbf-f39f-47f7-a8b6-204c35c4e1b4)
+
+![image](https://github.com/user-attachments/assets/4f975b27-1ad1-438e-ac41-5901344e98d7)
+
+![image](https://github.com/user-attachments/assets/bff76282-bc69-4221-a5b4-4f9c7cb68df0)
+These photos are without encryption with ssl
+
+
+So we have three pictures before encryption
+and also three picture after encryption
+
+
+
+
 ## Acklonegment
 It was a very intresting course were we have acheived valuble knowledge about programming especally python. Special thank to Dr. Mohd Almeer who really deserves this "thank" for giving us some of his valuable knowledge and educating us in the network major.    
 
