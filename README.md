@@ -48,6 +48,9 @@ With the help of the client application's simple design, users may browse menus,
 ## Scripts
 
 1. **Client-Side Scripts:**
+   ![first 25 lines](https://github.com/user-attachments/assets/25f16d38-bf50-4451-8702-f93d3f33ceb2)
+   the first function uses the title and options to show the main menu with the title and its available options
+
    
  
 3. **Server-Side Scripts:**
