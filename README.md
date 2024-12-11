@@ -30,11 +30,11 @@ With the help of the client application's simple design, users may browse menus,
 7. [Resources](#resources-optional)
 
 ## Requirments: 
-1. **Dependencies:**
+1. Install python in VScode to be able to run the scripts
 
-2. **Installation Steps:**
+2. Install a requests module
 
-3. **Development Environment Configuration:**
+3. Get your api key from "News API"
    
 ## How to Run the System
 1. Download the client file and the three files of the server
