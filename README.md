@@ -55,6 +55,7 @@ With the help of the client application's simple design, users may browse menus,
  
 3. **Server-Side Scripts:**
    
+![image](https://github.com/user-attachments/assets/bf96074c-08aa-4d69-b17d-0260e623a95a)
 
 
 ---
