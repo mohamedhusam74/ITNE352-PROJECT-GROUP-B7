@@ -25,18 +25,21 @@ This project is about creating a server were the client will be able to make a r
 # Requirments: 
 
 # How to: 
+To 
 
 # Scripts: 
 cient: 
 
 server:
+The server script consist
 
 # Additional concept
--API
--Multithreading 
--SSL
+- API
+- Multithreading 
+- SSL
 
 # Acklonegment
+It was a very intresting course were we have acheived valuble knowledge about programming especally python. Special thank to Dr. Mohd Almeer who really deserves this "thank" for giving us some of his valuable knowledge and educating us in the network major.    
 
 # Conclution:
 
