@@ -50,7 +50,10 @@ With the help of the client application's simple design, users may browse menus,
 
 1. **Client-Side Scripts:**
    ![first 25 lines](https://github.com/user-attachments/assets/25f16d38-bf50-4451-8702-f93d3f33ceb2)
-   the first function uses the title and options to show the main menu with the title and its available options
+   The client script is to send requests to the server about specific news with different country, category etc... First function is the "revealing_menu" which 
+   uses the title and options to show the main menu with the title and its available options, it also has two parameters. While the seconf function 
+  "sending_to_server" is used to send a formated request to the server, it has three parameters client, query and request_type. For the packages e used Socket and 
+   json. 
 
    
  
